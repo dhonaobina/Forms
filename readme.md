@@ -1,4 +1,4 @@
-Exercise 1 - Managing Forms and Window Objects
+**Managing Forms and Window Objects**
 You can create dynamic HTML forms using JavaScript. The forms can accept inputs at run-time. You can submit the inputs to the web server and clear the values from the form elements using various built-in methods.
 
 To facilitate accurate inputs in forms at run-time, you can display user-friendly messages in popup boxes using the Window object built-in methods. You can open and close new browser windows using the Window object built-in methods.
@@ -20,7 +20,7 @@ The last parameter is the top position of the window.
 
 The close() method is another Window object method. You can use this method to close the opened window.
 
-Exercise 1 - Validating Forms
+**Validating Forms**
 You can have validation checks enabled for the form elements. At run-time, the data entered in the form elements can be validated against certain conditions. This will ensure accuracy in the form inputs. This will also result in accurate data submission to the web server. You can use the built-in Window object methods such as prompt() and confirm() to accept inputs at run-time and confirm the form data submission process respectively.
 
 The Register.html page will accept inputs at run-time. Validation checks are included for each of the form elements. If the full name, email, password, or contact number fields are left blank, appropriate popup boxes such as alert and prompt are displayed. The full name field can take only alphabets. The contact number field can take only numbers. The form data is submitted on the click of the Submit button.
