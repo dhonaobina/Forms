@@ -1,0 +1,39 @@
+div 
+    {
+        margin: 0 auto;
+        width: 70%;
+        align-content: center;
+        background-color: #d4e3f7;
+        padding: 10px;
+    }
+
+span 
+    {
+        font-size: 20px;
+    }
+
+p 
+    {
+        color: #424242;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+body
+    {
+        background-color: #f1f1f1;
+    }
+
+.txtbox 
+    {
+        width: 40em;
+        height: 25px;
+    }
+
+.btn1
+    {
+        width: 30%;
+        padding: 5px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+

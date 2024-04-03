@@ -1,0 +1,16 @@
+<html>
+<body>
+<h2>Forms Collection</h2>
+<br><br>
+<form id="myForm1"></form>
+<form id="myForm2"></form>
+<form id="myForm3"></form>
+<form id="myForm4"></form>
+<form id="myForm5"></form>
+<form id="myForm6"></form>
+<p id="pid"></p>
+<script>
+var a = document.forms;var b = "";var c;for (c = 0; c < a.length; c++){ b = b + a[c].id + "<br>";}document.getElementById("pid").innerHTML = "The id of the forms are: " + "<br>" + b;
+</script>
+</body>
+</html>

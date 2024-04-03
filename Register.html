@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles\styles1.css">
+</head>
+<body onload="getInitialInformation()">
+    <div>
+        <form id="regForm" onsubmit="return validation()" method="post">
+            <h1 style="text-align: center">Register Here</h1>
+            <br><br>
+            <span>Full Name*</span>
+            <br>
+            <input class = "txtbox" type="text" name="fn" id="fn">
+            <br><br>
+            <span>Email*</span>
+            <br>
+            <input class = "txtbox" type="email" name="em" id="em">
+            <br><br>
+            <span>Password*</span>
+            <br>
+            <input class = "txtbox" type="Password" name="pwd" id="pwd">
+            <br><br>
+            <span>Contact Number*</span>
+            <br>
+            <input class = "txtbox" type="text" name="contact" id="contact">
+            <br><br>
+            <span>Gender</span>
+            <br>
+            <select style = "font-size: 16px" name="gender" id="gender">
+                <option value="select">--select--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <br><br>
+            <span>Qualification</span>
+            <br>
+            <select style = "font-size: 16px" name="qualification" id="qualification">
+                <option value="select">--select--</option>
+                <option value="Graduate">Undergraduate</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+            </select>
+            <br><br>
+           <span>Current date</span>
+            <br>
+            <input style = "font-size: 16px" type="text" name="currdate" id="currdate">
+            <br><br>
+            <input type="checkbox" name="cb" checked>
+            <span>
+                I accept the Terms & Conditions and have understood the Privacy Policy.</span>
+            <br><br>
+            <input class = "btn" type="submit" name="Submit" value="Submit">
+            <input class = "btn" type="reset" onclick="reset()">
+            <br><br>
+            <span>Existing user?
+                <input class = "btn1" type="button" onclick = "openPage()" name="Login" value="Login">
+            </span>
+        </form>
+    </div>
+    <script>
+        function getInitialInformation()
+        {
+                    var currDate = new Date();
+                    document.getElementById("currdate").value = currDate.getDate() + "-" + [currDate.getMonth()+1] + "-" + currDate.getFullYear();
+                    setTimeout(function(){ alert ("Please enter your details.")}, 2000);
+        }
+        function reset()
+        {
+                document.getElementById("regForm").reset();
+        }
+        function openPage()
+        {
+            var loginPage = open("login.html", 'windowname','width=1','height=1','left=5','top=3');
+            setTimeout(function(){ loginPage.close()}, 2000);
+        }
+        function validation()
+        {
+        //Validating the form using onsubmit event attribute
+        //Retrieving the form element values entered by the user
+            var name = document.forms["regForm"]["fn"];
+            var email = document.forms["regForm"]["em"];
+            var password = document.forms["regForm"]["pwd"];
+            var telephone = document.forms["regForm"]["contact"];
+            var chkNum = /^[0-9]+$/; //Expression for checking only numbers
+            var chkTxt = /^[A-Za-z\s]+$/; //Expression for checking only letters; whitespace is allowed
+        //Validating form using HTML input attributes
+            if (document.getElementById('fn').value == '')
+            {
+                alert("Please enter your name.");
+                document.getElementById('fn').focus();
+                return false;
+            }
+            if (!name.value.match(chkTxt))
+            {
+                alert("The name field can contain only letters. Please enter a valid name.");
+                document.getElementById('fn').value='';
+                document.getElementById('fn').focus();
+                return false;
+            }
+            if (email.value == '')
+            {
+                var ID = prompt("Please enter your email ID.");
+                if (ID !=null)
+                {
+                    document.getElementById("em").value = ID;
+                }
+                document.getElementById("em").focus();
+                return false;
+            }
+            if (password.value == '')
+            {
+                alert("Please enter a password.");
+                document.getElementById('pwd').focus();
+                return false;
+            }
+            if (telephone.value == '')
+            {
+                alert("Please enter a contact number.");
+                document.getElementById('contact').focus();
+                return false;
+            }
+            else if (!telephone.value.match(chkNum))
+            {
+                alert("Invalid contact number. Please enter a valid contact number.");
+                document.getElementById('contact').value='';
+                document.getElementById('contact').focus();
+                return false;
+            }
+            else
+            {
+                var choice = confirm("You have entered the contact number as " + telephone.value + ". Do you want to continue?");
+               if (choice == false)
+                {
+                    document.getElementById('contact').value='';
+                }
+                document.getElementById('contact').focus();
+            }
+            alert("The data has been submitted successfully !!");
+            return true;
+        }
+    </script>
+</body>
+</html>
